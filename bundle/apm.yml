@@ -1,0 +1,7 @@
+name: team-skills
+version: 0.1.0
+description: チームで使う Agent Skills の一式（検証用。中身は Anthropic 公式の Apache-2.0 のスキル）
+dependencies:
+  apm:
+    - anthropics/skills/skills/skill-creator#main
+    - anthropics/skills/skills/webapp-testing#main

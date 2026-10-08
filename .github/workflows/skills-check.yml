@@ -1,0 +1,29 @@
+name: skills-check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: consumer
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: APM を入れる
+        run: pip install apm-cli==0.33.0
+      # install --frozen を先に実行すると、手で直したファイルが黙って元に戻り、audit が見逃す。
+      # audit --ci は install なしで、lock のハッシュと展開済みファイルを比べる。
+      - name: スキルの手直しと lock の食い違いを検査する
+        run: apm audit --ci --no-policy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

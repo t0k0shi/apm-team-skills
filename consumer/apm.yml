@@ -1,0 +1,9 @@
+name: consumer
+version: 0.1.0
+description: チームのスキル一式を使う側のプロジェクト（検証用）
+targets:
+  - claude
+  - copilot
+dependencies:
+  apm:
+    - t0k0shi/apm-team-skills/bundle#main
