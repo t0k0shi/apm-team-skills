@@ -7,3 +7,4 @@ targets:
 dependencies:
   apm:
     - t0k0shi/apm-team-skills/bundle#main
+    - anthropics/skills/skills/frontend-design#main
