@@ -4,4 +4,4 @@ description: チームで使う Agent Skills の一式（検証用。中身は A
 dependencies:
   apm:
     - anthropics/skills/skills/skill-creator#main
-    - anthropics/skills/skills/webapp-testing#3d59511518591fa82e6cfcf0438d68dd5dad3e76
+    - anthropics/skills/skills/webapp-testing#main
